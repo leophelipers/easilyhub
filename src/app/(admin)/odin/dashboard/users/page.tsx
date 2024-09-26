@@ -2,7 +2,7 @@
 import { columns, Payment } from './_components/userData/columns'
 import { DataTable } from './_components/userData/data-table'
 
-export const payments: Payment[] = [
+const payments: Payment[] = [
   {
     id: '728ed52f',
     amount: 100,
