@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { SignUpButton } from '@clerk/clerk-react'
 
 // export interface ICtaProps {} props: IAdminTopbarProps
 
@@ -20,9 +21,11 @@ export default function Cta() {
           Sem precisar investir. Somente
           <br /> com o tempo que você tem!
         </h2>
-        <Button className="bg-brand-green text-white font-bold">
-          cadastre-se agora de maneira gratuita!
-        </Button>
+        <SignUpButton mode="modal">
+          <Button className="bg-brand-green text-white font-bold">
+            Cadastre-se agora de maneira gratuita!
+          </Button>
+        </SignUpButton>
       </div>
     </div>
   )

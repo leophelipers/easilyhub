@@ -2,6 +2,8 @@ import { ConvexClientProvider } from '@/components/providers/ConvexClientProvide
 import { Toaster } from '@/components/ui/toaster'
 import type { Metadata } from 'next'
 // eslint-disable-next-line camelcase
+import { ModalProvider } from '@/components/providers/ModalProvider'
+// eslint-disable-next-line camelcase
 import { Bebas_Neue, Poppins } from 'next/font/google'
 import './globals.css'
 
@@ -29,6 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className}  ${bebas.className} antialiased`}>
         <ConvexClientProvider>
+          <ModalProvider />
           {children}
           <Toaster />
         </ConvexClientProvider>

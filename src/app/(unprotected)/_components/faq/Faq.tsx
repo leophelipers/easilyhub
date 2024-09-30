@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 // export interface IFaqProps {} props: IAdminTopbarProps
 
@@ -16,12 +17,14 @@ export default function Faq() {
     <div className="md:mx-28 px-10 bg-[#1D1D1D] flex flex-col md:flex-row items-center justify-between py-8 gap-2">
       <div className="flex flex-col">
         <h1 className="font-['Bebas Neue'] font-bold text-brand-green text-5xl md:text-5xl">
-          Perguntas Frequentes
+          PERGUNTAS FREQUENTES
         </h1>
         <p>Sentiu falta de alguma pergunta? Nos deixe saber por aqui:</p>
-        <Button className="bg-brand-green text-white font-bold">
-          Entre em contato conosco
-        </Button>
+        <Link href={'https://tally.so/r/nWM28J'} passHref={true}>
+          <Button className="bg-brand-green text-white font-bold w-full">
+            Entre em contato conosco
+          </Button>
+        </Link>
       </div>
       <div className="p-2 flex flex-col items-center justify-start gap-4 w-full">
         <Accordion type="single" collapsible className="w-full">

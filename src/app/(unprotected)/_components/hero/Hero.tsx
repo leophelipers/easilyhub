@@ -2,6 +2,8 @@
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { useNewHero } from '@/hooks/use-hero-modal'
+import { SignUpButton } from '@clerk/clerk-react'
 import { Coin } from '@phosphor-icons/react'
 import {
   ArrowRightCircle,
@@ -12,15 +14,16 @@ import {
   User2Icon,
   UsersRound,
 } from 'lucide-react'
-import Link from 'next/link'
 
 // export interface IHeroProps {} props: IAdminTopbarProps
 
 export default function Hero() {
+  const useHeroModal = useNewHero()
   return (
-    <div className="bg-bannerImg min-h-screen h-full py-2 w-full overflow-hidden border-none flex flex-col">
+    <div className="md:bg-bannerImg min-h-screen h-full py-2 w-full overflow-hidden border-none flex flex-col">
       <div className="flex flex-col gap-1 md:flex-row md:mx-24 items-center justify-center my-12 p-10">
         {/** Headline e botões */}
+        {/** Mobile */}
         <div className="md:hidden flex flex-col gap-2 px-2 mx-auto md:mx-0 p-2 flex-1 items-start">
           <p className="text-[#333333] font-semibold text-md md:text-lg">
             Seu parceiro digital
@@ -49,24 +52,25 @@ export default function Hero() {
             </span>
           </div>
           <div className="flex flex-row gap-4 py-3 pb-4">
-            <Link href="#">
-              <Button className="bg-brand-green text-white text-sm md:text-md hidden md:flex">
-                Faça parte da nossa revolução
-              </Button>
+            <SignUpButton mode="modal">
               <Button className="bg-brand-green text-white text-sm md:text-md  md:hidden flex flex-row gap-2">
                 Faça Parte da Easily
                 <ArrowRightCircle />
               </Button>
-            </Link>
-            <Link
-              href="#"
-              className="md:flex md:flex-row gap-2 p-2 text-stone-900 text-sm md:text-md hidden"
+            </SignUpButton>
+          </div>
+          <div className="md:hidden">
+            <Button
+              variant={'ghost'}
+              onClick={useHeroModal.onOpen}
+              className="flex flex-row gap-2 p-2 text-stone-900 text-sm md:text-md"
             >
               <Play />
               Conheça a Easily
-            </Link>
+            </Button>
           </div>
         </div>
+        {/** Desktop */}
         <div className="hidden md:flex md:flex-col gap-2 px-4 mx-auto md:mx-0 p-2 flex-1 items-start">
           <p className="text-[#333333] font-semibold text-md md:text-lg">
             Facilitando suas vendas
@@ -95,22 +99,19 @@ export default function Hero() {
             </span>
           </div>
           <div className="flex flex-row gap-4">
-            <Link href="#">
+            <SignUpButton mode="modal">
               <Button className="bg-brand-green text-white text-sm md:text-md hidden md:flex">
                 Faça parte da nossa revolução
               </Button>
-              <Button className="bg-brand-green text-white text-sm md:text-md  md:hidden flex flex-row gap-2">
-                Faça Parte da Easily
-                <ArrowRightCircle />
-              </Button>
-            </Link>
-            <Link
-              href="#"
-              className="md:flex md:flex-row gap-2 p-2 text-stone-900 text-sm md:text-md hidden"
+            </SignUpButton>
+            <Button
+              variant={'ghost'}
+              onClick={useHeroModal.onOpen}
+              className="hidden md:flex md:flex-row gap-2 p-2 text-stone-900 text-sm md:text-md"
             >
               <Play />
               Conheça a Easily
-            </Link>
+            </Button>
           </div>
         </div>
         {/** Cards */}
