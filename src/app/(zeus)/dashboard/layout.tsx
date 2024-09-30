@@ -9,9 +9,9 @@ type Props = {
 
 const LayoutAdmin = ({ children }: Props) => {
   return (
-    <div className="h-full w-full bg-stone-900">
+    <div className="h-max min-h-screen w-full bg-stone-100">
       <div className="flex">
-        <div className="h-screen p-4 z-[15] shadow">
+        <div className="h-max p-4 z-[15] shadow hidden md:flex">
           <SideBar />
         </div>
         <div className="flex flex-col w-full">
@@ -19,7 +19,7 @@ const LayoutAdmin = ({ children }: Props) => {
             <TopBar />
           </div>
           <div>
-            <main className="h-full">{children}</main>
+            <main className="h-max min-h-screen">{children}</main>
           </div>
         </div>
       </div>

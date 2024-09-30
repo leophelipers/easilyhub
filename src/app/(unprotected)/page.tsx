@@ -16,19 +16,19 @@ export default function Home() {
       <div className="">
         <Topbar />
       </div>
-      <div>
+      <div id="hero">
         <Hero />
       </div>
-      <div className="w-full bg-[#1D1D1D]">
+      <div className="w-full bg-[#1D1D1D]" id="how">
         <HowItWorks />
       </div>
-      <div>
+      <div id="why">
         <Why />
       </div>
-      <div className="w-full bg-[#1D1D1D]">
+      <div className="w-full bg-[#1D1D1D]" id="cta">
         <Cta />
       </div>
-      <div className="w-full bg-[#1D1D1D]">
+      <div className="w-full bg-[#1D1D1D]" id="faq">
         <Faq />
       </div>
       <div className="w-full bg-black">

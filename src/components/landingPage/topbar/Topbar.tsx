@@ -24,7 +24,7 @@ export default function Topbar() {
               size="icon"
               className="shrink-0 md:hidden"
             >
-              <Menu className="h-5 w-5 shadow" />
+              <Menu className="h-5 w-5 shadow-2xl text-brand-green" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
@@ -37,20 +37,20 @@ export default function Topbar() {
                 <Image src={Logo} alt="logo" width={110} height={40} />
                 <span className="sr-only">EasilyHub</span>
               </Link>
-              <Link href="/premium" className="text-stone-950 font-bold">
+              <Link href="/#hero" className="text-stone-950 font-bold">
                 Home
               </Link>
-              <Link href="/blog" className="text-stone-950 font-bold">
+              <Link href="/#hero" className="text-stone-950 font-bold">
                 Benefícios
               </Link>
               <Link
-                href="https://phelps.beehiiv.com/subscribe"
+                href="/#how"
                 passHref={true}
                 className="text-stone-950 font-bold"
               >
                 Como funciona?
               </Link>
-              <Link href="/blog" className="text-stone-950 font-bold">
+              <Link href="/#faq" className="text-stone-950 font-bold">
                 FAQ
               </Link>
               <div className="flex flex-col gap-3">
@@ -114,7 +114,7 @@ export default function Topbar() {
             Benefícios{' '}
           </Button>
         </Link>
-        <Link href="#">
+        <Link href="/#how">
           <Button
             variant={'ghost'}
             className="bg-trasnsparent hover:bg-brand-green/40 text-slate-800 p-5"
@@ -123,7 +123,7 @@ export default function Topbar() {
             Como Funciona?{' '}
           </Button>
         </Link>
-        <Link href="#">
+        <Link href="/#faq">
           <Button
             variant={'ghost'}
             className="bg-trasnsparent hover:bg-brand-green/40 text-slate-800 p-5"

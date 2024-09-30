@@ -21,7 +21,7 @@ export default function Hero() {
     <div className="bg-bannerImg min-h-screen h-full py-2 w-full overflow-hidden border-none flex flex-col">
       <div className="flex flex-col gap-1 md:flex-row md:mx-24 items-center justify-center my-12 p-10">
         {/** Headline e botões */}
-        <div className="md:hidden flex flex-col gap-2 px-4 mx-auto md:mx-0 p-2 flex-1 items-start">
+        <div className="md:hidden flex flex-col gap-2 px-2 mx-auto md:mx-0 p-2 flex-1 items-start">
           <p className="text-[#333333] font-semibold text-md md:text-lg">
             Seu parceiro digital
           </p>

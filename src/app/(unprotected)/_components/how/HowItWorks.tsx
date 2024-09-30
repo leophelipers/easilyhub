@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator'
 
 export default function HowItWorks() {
   return (
-    <div className="bg-[#1D1D1D] py-7 mx-28 flex flex-col items-start">
+    <div className="bg-[#1D1D1D] py-7 px-9 md:mx-28 flex flex-col items-start">
       {/** Heading */}
       <div className="flex flex-col gap-2">
         <div className="border-l border-white">
