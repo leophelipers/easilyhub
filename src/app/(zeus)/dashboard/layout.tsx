@@ -11,7 +11,7 @@ const LayoutAdmin = ({ children }: Props) => {
   return (
     <div className="h-max min-h-screen w-full bg-stone-100">
       <div className="flex">
-        <div className="h-max p-4 z-[15] shadow hidden md:flex">
+        <div className="h-max p-4 z-[15] hidden md:flex">
           <SideBar />
         </div>
         <div className="flex flex-col w-full">
