@@ -40,7 +40,7 @@ export default function Topbar() {
               <Link href="/#hero" className="text-stone-950 font-bold">
                 Home
               </Link>
-              <Link href="/#hero" className="text-stone-950 font-bold">
+              <Link href="/#benefits" className="text-stone-950 font-bold">
                 Benefícios
               </Link>
               <Link
@@ -105,7 +105,7 @@ export default function Topbar() {
             Home{' '}
           </Button>
         </Link>
-        <Link href="#">
+        <Link href="/#benefits">
           <Button
             variant={'ghost'}
             className="bg-trasnsparent hover:bg-brand-green/40 text-slate-800 p-5 "

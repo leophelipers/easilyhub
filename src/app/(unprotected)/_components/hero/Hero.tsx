@@ -115,7 +115,7 @@ export default function Hero() {
           </div>
         </div>
         {/** Cards */}
-        <div className="flex flex-col md:gap-2">
+        <div id="benefits" className="flex flex-col md:gap-2">
           <Card className="flex flex-row backdrop-filter backdrop-blur-sm bg-opacity-10 bg-[#F4F3F8] border-none shadow-lg rounded-3xl w-fit">
             <CardHeader>
               <div className="p-2 rounded-2xl shadow bg-brand-green">

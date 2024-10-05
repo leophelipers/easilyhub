@@ -8,10 +8,15 @@ export const NewHeroModal = () => {
 
   return (
     <Dialog open={newHero.isOpen} onOpenChange={newHero.onClose}>
-      <DialogContent className="bg-white">
+      <DialogContent className="bg-white text-black">
         <DialogHeader></DialogHeader>
         <div>
-          <h1>Modal</h1>
+          <iframe
+            className="w-full aspect-video self-stretch md:min-h-96 rounded shadow"
+            src="https://www.youtube.com/embed/Y5TWOVNjs0k?si=Dq399j6l2I0tnYai"
+            title="Product Overview Video"
+            aria-hidden="true"
+          />
         </div>
       </DialogContent>
     </Dialog>

@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
-import { ArrowRight, CircleArrowRight } from 'lucide-react'
+import { CircleArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '../../../../public/easilyE.png'
@@ -25,7 +25,7 @@ export default function Dashboard() {
             </p>
           </CardContent>
           <CardFooter className="flex items-center justify-center">
-            <Link href="#">
+            <Link href="https://tally.so/r/np7VbP" passHref={true}>
               <Button className="flex items-center justify-center gap-1">
                 Quero fazer parte do Beta
                 <CircleArrowRight />
@@ -40,15 +40,15 @@ export default function Dashboard() {
           </CardHeader>
           <CardContent>
             <p>
-              Você está aqui porque quer divulgar a EasilyHub e os produtos
-              simultaneamente
+              Você está aqui porque quer ser um Influenciador agenciado(a) pela
+              EasilyHub
             </p>
           </CardContent>
           <CardFooter className="flex items-center justify-center">
-            <Link href="#">
+            <Link href="https://tally.so/r/wg74DJ" passHref={true}>
               <Button className="flex items-center justify-center gap-2">
                 Quero fazer parte do Beta
-                <ArrowRight />
+                <CircleArrowRight />
               </Button>
             </Link>
           </CardFooter>
@@ -60,13 +60,16 @@ export default function Dashboard() {
           </CardHeader>
           <CardContent>
             <p>
-              Você está aqui porque quer divulgar a EasilyHub e os produtos
-              simultaneamente
+              Você está aqui porque quer divulgar os produtos e aumentar a renda
+              com consistência
             </p>
           </CardContent>
           <CardFooter className="flex items-center justify-center">
-            <Link href="#">
-              <Button>Quero fazer parte do Beta</Button>
+            <Link href="https://tally.so/r/mYMd5v" passHref={true}>
+              <Button className="flex items-center justify-center gap-2">
+                Quero fazer parte do Beta
+                <CircleArrowRight />
+              </Button>
             </Link>
           </CardFooter>
         </Card>
@@ -84,8 +87,11 @@ export default function Dashboard() {
             </p>
           </CardContent>
           <CardFooter className="flex items-center justify-center">
-            <Link href="#">
-              <Button>Quero fazer parte do Beta</Button>
+            <Link href="https://tally.so/r/mDJe4E" passHref={true}>
+              <Button className="flex items-center justify-center gap-2">
+                Quero fazer parte do Beta
+                <CircleArrowRight />
+              </Button>
             </Link>
           </CardFooter>
         </Card>
