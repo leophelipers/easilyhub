@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { v } from 'convex/values'
+import { ConvexError, v } from 'convex/values'
 import { internalMutation, mutation, query } from './_generated/server'
 import { validateCNPJ, validateCPF, validateEmail } from './validationUtils'
 
@@ -136,5 +136,75 @@ export const countUsers = query({
       .collect()
       .then((users) => users.length)
     return { totalUsers }
+  },
+})
+
+export const createInvited = mutation({
+  args: {
+    inviteCode: v.optional(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity()
+
+    if (!identity) {
+      throw new Error('Called currentUser without authenticated user')
+    }
+
+    const user = await ctx.db
+      .query('users')
+      .withIndex('by_userId', (q) => q.eq('userId', identity.subject))
+      .unique()
+
+    if (!user) {
+      throw new ConvexError({
+        message: 'Esse usuário não existe',
+        code: 123,
+      })
+    }
+
+    const codeExists = await ctx.db
+      .query('users')
+      .withIndex('by_easilyPartnerCode', (q) =>
+        q.eq('easilyPartnerCode', args.inviteCode),
+      )
+      .collect()
+
+    if (codeExists.length < 1) {
+      throw new ConvexError({
+        message:
+          'Esse código não existe, verifique letras maiúsculas e minúsculas.',
+        code: 123,
+      })
+    }
+
+    const invited = await ctx.db.patch(user._id, {
+      referatedBy: args.inviteCode,
+    })
+
+    return invited
+  },
+})
+
+export const hasInvited = query({
+  handler: async (ctx) => {
+    const identity = await ctx.auth.getUserIdentity()
+
+    if (!identity) {
+      throw new Error('Called currentUser without authenticated user')
+    }
+
+    const user = await ctx.db
+      .query('users')
+      .withIndex('by_userId', (q) => q.eq('userId', identity.subject))
+      .unique()
+
+    if (!user) {
+      throw new ConvexError({
+        message: 'Esse usuário não existe',
+        code: 123,
+      })
+    }
+
+    return user
   },
 })

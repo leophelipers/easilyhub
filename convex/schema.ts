@@ -18,11 +18,15 @@ export default defineSchema({
     bankAccountNumber: v.optional(v.string()),
     bankAccountType: v.optional(v.string()),
     role: v.optional(v.string()),
-  }).index('by_userId', ['userId']),
+    easilyPartnerCode: v.optional(v.string()),
+    referatedBy: v.optional(v.string()),
+  })
+    .index('by_userId', ['userId'])
+    .index('by_easilyPartnerCode', ['easilyPartnerCode']),
 
   easilyAccount: defineTable({
     userId: v.id('users'),
-    userClerkId: v.string(),
+    userClerkId: v.optional(v.string()),
     balance: v.optional(v.string()),
     withdraws: v.id('withdraws'),
     comissions: v.optional(v.id('commissions')),
