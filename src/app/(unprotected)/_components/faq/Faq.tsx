@@ -66,6 +66,16 @@ export default function Faq() {
               contato@easilyhub.com com o título : "Confirmar DM"
             </AccordionContent>
           </AccordionItem>
+          <AccordionItem value="item-5">
+            <AccordionTrigger>
+              Fui reprovado como parceiro, e agora?
+            </AccordionTrigger>
+            <AccordionContent>
+              Você pode tentar novamente quando quiser, fale com o nosso time
+              para saber o que faltou. Corrija. Aplique de novo! Estamos te
+              esperando aqui.
+            </AccordionContent>
+          </AccordionItem>
         </Accordion>
       </div>
     </div>

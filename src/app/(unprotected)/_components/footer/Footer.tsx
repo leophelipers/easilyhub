@@ -14,8 +14,8 @@ export default function Footer() {
         <div className="flex gap-4 py-4">
           <div className="text-slate-500">© Copyright 2024 EasilyHub.</div>
           <div className="flex gap-4">
-            <Link href={'/'}>Política de privacidade</Link>
-            <Link href={'/'}>Termos de serviços</Link>
+            <Link href={'/privacy-politics'}>Política de privacidade</Link>
+            <Link href={'/terms'}>Termos de serviços</Link>
           </div>
         </div>
       </div>

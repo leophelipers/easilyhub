@@ -2,10 +2,13 @@
 
 import { Button } from '@/components/ui/button'
 import { SignUpButton } from '@clerk/clerk-react'
+import { useConvexAuth } from 'convex/react'
+import Link from 'next/link'
 
 // export interface ICtaProps {} props: IAdminTopbarProps
 
 export default function Cta() {
+  const { isLoading, isAuthenticated } = useConvexAuth()
   return (
     <div className="md:mx-28 px-10 bg-[#1D1D1D] flex flex-col md:flex-row items-center justify-between py-8">
       <div className="p-2">
@@ -21,11 +24,26 @@ export default function Cta() {
           Sem precisar investir. Somente
           <br /> com o tempo que você tem!
         </h2>
-        <SignUpButton mode="modal">
-          <Button className="bg-brand-green text-white font-bold">
-            Cadastre-se agora de maneira gratuita!
-          </Button>
-        </SignUpButton>
+        {!isAuthenticated && !isLoading && (
+          <>
+            <SignUpButton mode="modal">
+              <Button className="bg-brand-green text-white font-bold">
+                Cadastre-se agora de maneira gratuita!
+              </Button>
+            </SignUpButton>
+          </>
+        )}
+        {isAuthenticated && !isLoading && (
+          <>
+            <div className="flex gap-x-2">
+              <Link href={'/dashboard'}>
+                <Button className="bg-brand-green text-white font-bold w-max border-none">
+                  ENTRAR
+                </Button>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 // export interface IInviteProps {} props: IAdminTopbarProps
+
 import { useMutation } from 'convex/react'
 import { ConvexError } from 'convex/values'
 import { api } from '../../../../../convex/_generated/api'
@@ -39,6 +40,11 @@ export default function Invite() {
       await updateInvited({
         inviteCode: values.invite,
       })
+      toast({
+        variant: 'success',
+        description: 'Código validado com sucesso',
+      })
+
       router.push('/dashboard')
     } catch (error: unknown) {
       let message: string

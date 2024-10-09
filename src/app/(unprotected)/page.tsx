@@ -6,6 +6,7 @@ import Faq from './_components/faq/Faq'
 import Footer from './_components/footer/Footer'
 import Hero from './_components/hero/Hero'
 import HowItWorks from './_components/how/HowItWorks'
+import Partner from './_components/partner/Partner'
 import Why from './_components/why/Why'
 
 // export interface IHomeProps {} props: IAdminTopbarProps
@@ -27,6 +28,9 @@ export default function Home() {
       </div>
       <div className="w-full bg-[#1D1D1D]" id="cta">
         <Cta />
+      </div>
+      <div className="w-full bg-brand-green" id="cta">
+        <Partner />
       </div>
       <div className="w-full bg-[#1D1D1D]" id="faq">
         <Faq />

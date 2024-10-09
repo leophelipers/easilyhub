@@ -78,9 +78,9 @@ export default function Topbar() {
                       <Link href={'/dashboard'}>
                         <Button
                           variant={'outline'}
-                          className="hover:orange-500"
+                          className="bg-stone-700 text-white"
                         >
-                          Enter
+                          ENTRAR
                         </Button>
                       </Link>
                       <UserButton afterSignOutUrl="/" />
@@ -142,8 +142,8 @@ export default function Topbar() {
             </SignUpButton>
             <SignInButton mode="modal">
               <Button
-                variant={'ghost'}
-                className="text-white bg-brand-green shadow p-4"
+                variant={'outline'}
+                className="text-white bg-brand-green shadow-lg p-4"
               >
                 ENTRAR
               </Button>
@@ -154,8 +154,8 @@ export default function Topbar() {
           <>
             <div className="flex gap-x-2">
               <Link href={'/dashboard'}>
-                <Button variant={'outline'} className="hover:orange-500">
-                  Enter
+                <Button variant={'outline'} className="bg-stone-700 text-white">
+                  ENTRAR
                 </Button>
               </Link>
               <UserButton afterSignOutUrl="/" />
