@@ -20,6 +20,8 @@ export default defineSchema({
     role: v.optional(v.string()),
     easilyPartnerCode: v.optional(v.string()),
     referatedBy: v.optional(v.string()),
+    referallCount: v.optional(v.number()),
+    firstSale: v.optional(v.boolean()),
   })
     .index('by_userId', ['userId'])
     .index('by_easilyPartnerCode', ['easilyPartnerCode']),

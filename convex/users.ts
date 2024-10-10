@@ -169,7 +169,7 @@ export const createInvited = mutation({
       )
       .collect()
 
-    if (codeExists.length < 1) {
+    if (codeExists?.length < 1) {
       throw new ConvexError({
         message:
           'Esse código não existe, verifique letras maiúsculas e minúsculas.',
@@ -180,6 +180,24 @@ export const createInvited = mutation({
     const invited = await ctx.db.patch(user._id, {
       referatedBy: args.inviteCode,
     })
+
+    const affiliate = await ctx.db
+      .query('users')
+      .withIndex('by_easilyPartnerCode', (q) =>
+        q.eq('easilyPartnerCode', args.inviteCode),
+      )
+      .unique()
+
+    if (affiliate) {
+      const countInvited = affiliate.referallCount
+
+      const newCountInvited = countInvited !== undefined ? countInvited + 1 : 1
+
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const newCount = await ctx.db.patch(affiliate._id, {
+        referallCount: newCountInvited,
+      })
+    }
 
     return invited
   },
