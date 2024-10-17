@@ -22,9 +22,11 @@ export default defineSchema({
     referatedBy: v.optional(v.string()),
     referallCount: v.optional(v.number()),
     firstSale: v.optional(v.boolean()),
+    comissionPartner: v.optional(v.float64()),
   })
     .index('by_userId', ['userId'])
-    .index('by_easilyPartnerCode', ['easilyPartnerCode']),
+    .index('by_easilyPartnerCode', ['easilyPartnerCode'])
+    .index('by_referatedBy', ['referatedBy']),
 
   easilyAccount: defineTable({
     userId: v.id('users'),

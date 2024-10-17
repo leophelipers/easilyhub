@@ -15,7 +15,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <div className="h-screen flex">
+    <div className="h-full h-min-screen flex">
       <main className="flex-1 h-screen overflow-y-auto">{children}</main>
     </div>
   )

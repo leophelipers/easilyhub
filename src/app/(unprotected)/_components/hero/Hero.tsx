@@ -178,7 +178,7 @@ export default function Hero() {
             <p>
               Você não precisa gastar 8 horas do seu dia para começar a ganhar.
               Use somente o tempo que você tem disponível e já vai conseguir
-              alcançar reultados.
+              alcançar resultados.
             </p>
           </CardContent>
         </Card>

@@ -18,6 +18,8 @@ import type {
 import type * as clerk from "../clerk.js";
 import type * as clicks from "../clicks.js";
 import type * as http from "../http.js";
+import type * as partners from "../partners.js";
+import type * as settings from "../settings.js";
 import type * as users from "../users.js";
 import type * as validationUtils from "../validationUtils.js";
 
@@ -33,6 +35,8 @@ declare const fullApi: ApiFromModules<{
   clerk: typeof clerk;
   clicks: typeof clicks;
   http: typeof http;
+  partners: typeof partners;
+  settings: typeof settings;
   users: typeof users;
   validationUtils: typeof validationUtils;
 }>;

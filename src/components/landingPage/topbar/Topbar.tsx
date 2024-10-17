@@ -1,7 +1,12 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { SignInButton, SignUpButton, UserButton } from '@clerk/clerk-react'
 import { useConvexAuth } from 'convex/react'
 import { Menu } from 'lucide-react'
@@ -29,66 +34,70 @@ export default function Topbar() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="bg-white">
-            <nav className="grid gap-6 text-lg font-medium  text-ston-950">
-              <Link
-                href="/"
-                className="flex items-center gap-2 text-lg font-semibold md:text-base"
-              >
-                <Image src={Logo} alt="logo" width={110} height={40} />
-                <span className="sr-only">EasilyHub</span>
-              </Link>
-              <Link href="/#hero" className="text-stone-950 font-bold">
-                Home
-              </Link>
-              <Link href="/#benefits" className="text-stone-950 font-bold">
-                Benefícios
-              </Link>
-              <Link
-                href="/#how"
-                passHref={true}
-                className="text-stone-950 font-bold"
-              >
-                Como funciona?
-              </Link>
-              <Link href="/#faq" className="text-stone-950 font-bold">
-                FAQ
-              </Link>
-              <div className="flex flex-col gap-3">
-                {isLoading && <p>Loading...</p>}
-                {!isAuthenticated && !isLoading && (
-                  <>
-                    <SignUpButton mode="modal">
-                      <Button className="bg-stone-700 text-white">
-                        REGISTRAR
-                      </Button>
-                    </SignUpButton>
-                    <SignInButton mode="modal">
-                      <Button
-                        variant={'ghost'}
-                        className="text-white bg-brand-green shadow-lg p-4"
-                      >
-                        ENTRAR
-                      </Button>
-                    </SignInButton>
-                  </>
-                )}
-                {isAuthenticated && !isLoading && (
-                  <>
-                    <div className="flex gap-x-2">
-                      <Link href={'/dashboard'}>
+            <SheetClose asChild>
+              <nav className="grid gap-6 text-lg font-medium  text-ston-950">
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 text-lg font-semibold md:text-base"
+                >
+                  <Image src={Logo} alt="logo" width={110} height={40} />
+                  <span className="sr-only">EasilyHub</span>
+                </Link>
+
+                <Link href="/#hero" className="text-stone-950 font-bold">
+                  Home
+                </Link>
+
+                <Link href="/#benefits" className="text-stone-950 font-bold">
+                  Benefícios
+                </Link>
+                <Link
+                  href="/#how"
+                  passHref={true}
+                  className="text-stone-950 font-bold"
+                >
+                  Como funciona?
+                </Link>
+                <Link href="/#faq" className="text-stone-950 font-bold">
+                  FAQ
+                </Link>
+                <div className="flex flex-col gap-3">
+                  {isLoading && <p>Loading...</p>}
+                  {!isAuthenticated && !isLoading && (
+                    <>
+                      <SignUpButton mode="modal">
+                        <Button className="bg-stone-700 text-white">
+                          REGISTRAR
+                        </Button>
+                      </SignUpButton>
+                      <SignInButton mode="modal">
                         <Button
-                          variant={'outline'}
-                          className="bg-stone-700 text-white"
+                          variant={'ghost'}
+                          className="text-white bg-brand-green shadow-lg p-4"
                         >
                           ENTRAR
                         </Button>
-                      </Link>
-                      <UserButton afterSignOutUrl="/" />
-                    </div>
-                  </>
-                )}
-              </div>
-            </nav>
+                      </SignInButton>
+                    </>
+                  )}
+                  {isAuthenticated && !isLoading && (
+                    <>
+                      <div className="flex gap-x-2">
+                        <Link href={'/dashboard'}>
+                          <Button
+                            variant={'outline'}
+                            className="bg-stone-700 text-white"
+                          >
+                            ENTRAR
+                          </Button>
+                        </Link>
+                        <UserButton afterSignOutUrl="/" />
+                      </div>
+                    </>
+                  )}
+                </div>
+              </nav>
+            </SheetClose>
           </SheetContent>
         </Sheet>
       </div>
