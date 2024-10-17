@@ -43,9 +43,9 @@ export default function Topbar() {
                   <Image src={Logo} alt="logo" width={110} height={40} />
                   <span className="sr-only">EasilyHub</span>
                 </Link>
-
+                {/*
                 <Link href="/#hero" className="text-stone-950 font-bold">
-                  Home
+                  <Button variant={'ghost'}>Home</Button>
                 </Link>
 
                 <Link href="/#benefits" className="text-stone-950 font-bold">
@@ -60,7 +60,7 @@ export default function Topbar() {
                 </Link>
                 <Link href="/#faq" className="text-stone-950 font-bold">
                   FAQ
-                </Link>
+                </Link> */}
                 <div className="flex flex-col gap-3">
                   {isLoading && <p>Loading...</p>}
                   {!isAuthenticated && !isLoading && (
