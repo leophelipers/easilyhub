@@ -12,6 +12,8 @@
     "@clerk/clerk-sdk-node": "^5.0.38",
     "@clerk/localizations": "^3.0.6",
     "@clerk/nextjs": "^5.5.2",
+    "@edgestore/react": "^0.2.2",
+    "@edgestore/server": "^0.2.2",
     "@hookform/resolvers": "^3.9.0",
     "@next/third-parties": "^14.2.14",
     "@phosphor-icons/react": "^2.1.7",

@@ -1,6 +1,7 @@
 'use client'
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import Documents from './_components/documents'
 import Profile from './_components/profile'
 
 // export interface ISettingsProps {} props: IAdminTopbarProps
@@ -34,8 +35,8 @@ export default function Settings() {
           <TabsContent value="profile">
             <Profile />
           </TabsContent>
-          <TabsContent value="Documentos">
-            Change your password here.
+          <TabsContent value="documents">
+            <Documents />
           </TabsContent>
         </Tabs>
       </div>

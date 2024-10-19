@@ -1,6 +1,7 @@
 import { ConvexClientProvider } from '@/components/providers/ConvexClientProvider'
 import { Toaster } from '@/components/ui/toaster'
 import type { Metadata } from 'next'
+import { EdgeStoreProvider } from '../lib/edgestore'
 // eslint-disable-next-line camelcase
 import { ModalProvider } from '@/components/providers/ModalProvider'
 // eslint-disable-next-line camelcase
@@ -32,7 +33,7 @@ export default function RootLayout({
       <body className={`${poppins.className}  ${bebas.className} antialiased`}>
         <ConvexClientProvider>
           <ModalProvider />
-          {children}
+          <EdgeStoreProvider>{children}</EdgeStoreProvider>
           <Toaster />
         </ConvexClientProvider>
       </body>
