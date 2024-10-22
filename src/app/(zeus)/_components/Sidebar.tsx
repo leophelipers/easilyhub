@@ -10,10 +10,10 @@ import {
 import {
   Home,
   LineChart,
-  Package,
   Settings,
   ShoppingCart,
   Users2,
+  Wallet,
 } from 'lucide-react'
 
 import Image from 'next/image'
@@ -35,9 +35,9 @@ export function SideBar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="/dashboard"
+                  href="/dashboard/main-dash"
                   className={
-                    pathname === '/dashboard'
+                    pathname === '/dashboard/main-dash'
                       ? 'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 bg-emerald-700 text-white'
                       : 'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
                   }
@@ -54,18 +54,18 @@ export function SideBar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href="/dashboard/showcase"
                   className={
-                    pathname === '/dashboard/sales'
-                      ? 'cursor-not-allowed flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 bg-emerald-700 text-white'
-                      : 'cursor-not-allowed flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
+                    pathname === '/dashboard/showcase'
+                      ? 'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 bg-emerald-700 text-white'
+                      : 'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
                   }
                 >
                   <ShoppingCart className="h-5 w-5" />
-                  <span className="sr-only">Vendas</span>
+                  <span className="sr-only">Showcase</span>
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="right">Vendas</TooltipContent>
+              <TooltipContent side="right">Showcase</TooltipContent>
             </Tooltip>
           </TooltipProvider>
 
@@ -73,18 +73,18 @@ export function SideBar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href="/dashboard/financial"
                   className={
-                    pathname === '/dashboard/products'
-                      ? 'cursor-not-allowed flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 bg-emerald-700 text-white'
-                      : 'cursor-not-allowed flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
+                    pathname === '/dashboard/financial'
+                      ? 'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 bg-emerald-700 text-white'
+                      : 'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
                   }
                 >
-                  <Package className="h-5 w-5" />
-                  <span className="sr-only">Produtos</span>
+                  <Wallet className="h-5 w-5" />
+                  <span className="sr-only">Financeiro</span>
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="right">Produtos</TooltipContent>
+              <TooltipContent side="right">Financeiro</TooltipContent>
             </Tooltip>
           </TooltipProvider>
 
@@ -100,10 +100,12 @@ export function SideBar() {
                   }
                 >
                   <Users2 className="h-5 w-5" />
-                  <span className="sr-only">Colaboradores</span>
+                  <span className="sr-only">Colaboradores(em breve)</span>
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="right">Colaboradores</TooltipContent>
+              <TooltipContent side="right">
+                Colaboradores(em breve)
+              </TooltipContent>
             </Tooltip>
           </TooltipProvider>
 
@@ -119,10 +121,10 @@ export function SideBar() {
                   }
                 >
                   <LineChart className="h-5 w-5" />
-                  <span className="sr-only">Relatórios</span>
+                  <span className="sr-only">Relatórios(em breve)</span>
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="right">Relatórios</TooltipContent>
+              <TooltipContent side="right">Relatórios(em breve)</TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </nav>
@@ -131,11 +133,11 @@ export function SideBar() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href="#"
+                  href="/dashboard/settings/vzero"
                   className={
-                    pathname === '/dashboard/settings'
-                      ? 'cursor-not-allowed flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 bg-emerald-700 text-white'
-                      : 'cursor-not-allowed flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
+                    pathname === '/dashboard/settings/vzero'
+                      ? 'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 bg-emerald-700 text-white'
+                      : 'flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8'
                   }
                 >
                   <Settings className="h-5 w-5" />

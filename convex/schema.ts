@@ -23,18 +23,24 @@ export default defineSchema({
     referallCount: v.optional(v.number()),
     firstSale: v.optional(v.boolean()),
     comissionPartner: v.optional(v.float64()),
+    affiliateToken: v.optional(v.string()),
+    daysToUnlock: v.optional(v.number()), // Number of days to unlock balance
+    minEarlyWithdrawal: v.optional(v.number()), // Minimum amount for early withdrawal
+    earlyWithdrawalFee: v.optional(v.number()), // Fee percentage for early withdrawal
   })
     .index('by_userId', ['userId'])
+    .index('by_affiliateToken', ['affiliateToken'])
     .index('by_easilyPartnerCode', ['easilyPartnerCode'])
     .index('by_referatedBy', ['referatedBy']),
 
   easilyAccount: defineTable({
     userId: v.id('users'),
+    totalBalance: v.optional(v.number()), // Historical balance
+    blockedBalance: v.optional(v.number()), // Currently locked balance
+    withdrawableBalance: v.optional(v.number()), // Available balance after the lock period
     userClerkId: v.optional(v.string()),
-    balance: v.optional(v.string()),
-    withdraws: v.id('withdraws'),
     comissions: v.optional(v.id('commissions')),
-  }),
+  }).index('by_userId', ['userId']),
 
   withdraws: defineTable({
     userId: v.id('users'),
@@ -47,8 +53,15 @@ export default defineSchema({
     name: v.string(),
     description: v.string(),
     heroImage: v.string(),
+    linkSalesPage: v.optional(v.string()),
+    linkLeadsPage: v.optional(v.string()),
     comissionValue: v.string(),
     comissionType: v.string(),
+    easilyComissionRate: v.optional(v.number()),
+    lastSaleTimestamp: v.optional(v.number()),
+    paymentPlataform: v.optional(v.string()),
+    paymentPlataformId: v.optional(v.string()),
+    visible: v.optional(v.boolean()),
   }),
 
   comissions: defineTable({
@@ -65,11 +78,28 @@ export default defineSchema({
     userClerkId: v.string(),
     productId: v.id('products'),
     clickOrigin: v.string(),
-  }),
+    timestamp: v.number(),
+  })
+    .index('by_userId_productId', ['userId', 'productId'])
+    .index('by_productId', ['productId'])
+    .index('by_userId', ['userId']),
 
   affiliateEasily: defineTable({
     affiliateId: v.id('users'),
     referateId: v.id('users'),
     finalDate: v.optional(v.string()),
   }),
+
+  transactions: defineTable({
+    affiliateId: v.id('users'), // ID do afiliado
+    amount: v.number(), // Valor da comissão
+    productId: v.optional(v.id('products')), // ID do produto
+    productName: v.optional(v.string()), // Nome do produto
+    saleId: v.string(), // ID da venda
+    createdAt: v.number(), // Timestamp da criação
+    clickId: v.optional(v.id('clicks')), // ID da click
+    status: v.string(), // "blocked", "available"
+    unlockDate: v.number(), // Date when the balance will become available
+    typeOf: v.string(), // tipo da transação
+  }).index('by_affiliateId', ['affiliateId']),
 })

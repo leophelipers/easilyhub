@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ConvexError, v } from 'convex/values'
+import { v4 as uuidv4 } from 'uuid'
+import { Id } from './_generated/dataModel'
 import { internalMutation, mutation, query } from './_generated/server'
 import { validateCNPJ, validateCPF, validateEmail } from './validationUtils'
 
@@ -32,13 +35,28 @@ export const createUser = internalMutation({
     lastName: v.string(),
   },
   handler: async (ctx, args) => {
-    await ctx.db.insert('users', {
+    const affiliateToken = uuidv4()
+
+    // Criar o usuário
+    const userId = await ctx.db.insert('users', {
       email: args.email,
       userId: args.userId,
       name: args.name,
       lastName: args.lastName,
       role: 'user',
+      affiliateToken,
     })
+
+    // Inicializar a easilyAccount para o novo usuário
+    await ctx.db.insert('easilyAccount', {
+      userId,
+      totalBalance: 0,
+      blockedBalance: 0,
+      withdrawableBalance: 0,
+      userClerkId: args.userId, // Assumindo que userId é o Clerk ID
+    })
+
+    return userId
   },
 })
 
@@ -211,6 +229,95 @@ export const hasInvited = query({
       throw new Error('Called currentUser without authenticated user')
     }
 
+    const user = await ctx.db
+      .query('users')
+      .withIndex('by_userId', (q) => q.eq('userId', identity.subject))
+      .unique()
+
+    if (!user) {
+      throw new ConvexError({
+        message: 'Esse usuário não existe',
+        code: 123,
+      })
+    }
+
+    return user
+  },
+})
+
+export const updateUser = mutation({
+  args: {
+    userId: v.optional(v.string()),
+    name: v.optional(v.string()),
+    lastName: v.optional(v.string()),
+    email: v.optional(v.string()),
+    cpf: v.optional(v.string()),
+    cnpj: v.optional(v.string()),
+    isCnpj: v.optional(v.boolean()),
+    address: v.optional(v.string()),
+    addressNumber: v.optional(v.string()),
+    addressComplement: v.optional(v.string()),
+    cep: v.optional(v.string()),
+    bank: v.optional(v.string()),
+    bankAccountNumber: v.optional(v.string()),
+    bankAccountType: v.optional(v.string()),
+    role: v.optional(v.string()),
+    easilyPartnerCode: v.optional(v.string()),
+    referatedBy: v.optional(v.string()),
+    referallCount: v.optional(v.number()),
+    firstSale: v.optional(v.boolean()),
+    comissionPartner: v.optional(v.float64()),
+    affiliateToken: v.optional(v.string()),
+    daysToUnlock: v.optional(v.number()),
+    minEarlyWithdrawal: v.optional(v.number()),
+    earlyWithdrawalFee: v.optional(v.number()),
+  },
+  handler: async (ctx, args) => {
+    const { userId, ...updateFields } = args
+
+    if (!userId) {
+      throw new ConvexError({
+        message: 'User ID is required',
+      })
+    }
+
+    // Remover campos undefined do objeto de atualização
+    const fieldsToUpdate = Object.fromEntries(
+      Object.entries(updateFields).filter(([_, value]) => value !== undefined),
+    )
+
+    // Verificar se há campos para atualizar
+    if (Object.keys(fieldsToUpdate).length === 0) {
+      throw new Error('Nenhum campo para atualizar foi fornecido')
+    }
+
+    // Atualizar o usuário com os campos fornecidos
+    const updatedUser = await ctx.db.patch(
+      userId as Id<'users'>,
+      fieldsToUpdate,
+    )
+
+    return {
+      success: true,
+      message: 'Usuário alterado com sucesso!',
+      updatedUser,
+    }
+  },
+})
+
+export const getUser = query({
+  handler: async (ctx) => {
+    // Autenticar o usuário
+    const identity = await ctx.auth.getUserIdentity()
+
+    if (!identity) {
+      throw new ConvexError({
+        message: 'Usuário não autenticado',
+        code: 401,
+      })
+    }
+
+    // Buscar o usuário
     const user = await ctx.db
       .query('users')
       .withIndex('by_userId', (q) => q.eq('userId', identity.subject))
