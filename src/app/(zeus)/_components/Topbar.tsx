@@ -13,12 +13,10 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { UserButton } from '@clerk/clerk-react'
 import {
   HomeIcon,
-  LineChart,
-  Package,
-  Package2,
   PanelLeft,
+  Settings,
   ShoppingCart,
-  Users2,
+  Wallet,
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -33,7 +31,7 @@ export function TopBar() {
   return (
     <div className="p-2 w-full h-full min-h-6 border-b border-emerald-500">
       <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-4  bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-        <div className="hidden">
+        <div className="flex md:hidden text-stone-900">
           <Sheet>
             <SheetTrigger asChild>
               <Button size="icon" variant="outline" className="sm:hidden">
@@ -41,49 +39,35 @@ export function TopBar() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="sm:max-w-xs">
+            <SheetContent side="left" className="sm:max-w-xs bg-stone-900">
               <nav className="grid gap-6 text-lg font-medium">
                 <Link
-                  href="#"
-                  className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
-                >
-                  <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-                  <span className="sr-only">Acme Inc</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                  href="/dashboard/main-dash"
+                  className="flex items-center gap-4 px-2.5 text-foreground"
                 >
                   <HomeIcon className="h-5 w-5" />
                   Dashboard
                 </Link>
                 <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <ShoppingCart className="h-5 w-5" />
-                  Orders
-                </Link>
-                <Link
-                  href="#"
+                  href="/dashboard/showcase"
                   className="flex items-center gap-4 px-2.5 text-foreground"
                 >
-                  <Package className="h-5 w-5" />
-                  Products
+                  <ShoppingCart className="h-5 w-5" />
+                  Showcase
                 </Link>
                 <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                  href="/dashboard/financial"
+                  className="flex items-center gap-4 px-2.5 text-foreground"
                 >
-                  <Users2 className="h-5 w-5" />
-                  Customers
+                  <Wallet className="h-5 w-5" />
+                  Carteira
                 </Link>
                 <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                  href="/dashboard/settings/vzero"
+                  className="flex items-center gap-4 px-2.5 text-foreground"
                 >
-                  <LineChart className="h-5 w-5" />
-                  Settings
+                  <Settings className="h-5 w-5" />
+                  Configurações
                 </Link>
               </nav>
             </SheetContent>
