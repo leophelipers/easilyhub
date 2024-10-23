@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { api } from '../../../../../../../convex/_generated/api'
 import { Id } from '../../../../../../../convex/_generated/dataModel'
 
-const productId = 'jh75q0rjm4yv7bqpf70teqy37172zfve' // String do ID do produto
+const productId = 'js75gvn0hfceg8c8sqhrnb488s734wmt' // String do ID do produto
 
 export default function ProductPage({
   params,
