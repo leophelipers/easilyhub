@@ -1,5 +1,6 @@
 import { ConvexClientProvider } from '@/components/providers/ConvexClientProvider'
 import { Toaster } from '@/components/ui/toaster'
+import { GoogleTagManager } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { EdgeStoreProvider } from '../lib/edgestore'
 // eslint-disable-next-line camelcase
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${poppins.className}  ${bebas.className} antialiased`}>
         <ConvexClientProvider>
           <ModalProvider />
+          <GoogleTagManager gtmId="GTM-N59W73TS" />
           <EdgeStoreProvider>{children}</EdgeStoreProvider>
           <Toaster />
         </ConvexClientProvider>
