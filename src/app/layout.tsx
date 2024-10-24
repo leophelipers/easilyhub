@@ -36,6 +36,7 @@ export default function RootLayout({
           <ModalProvider />
           <GoogleTagManager gtmId="GTM-N59W73TS" />
           <EdgeStoreProvider>{children}</EdgeStoreProvider>
+
           <Toaster />
         </ConvexClientProvider>
       </body>
