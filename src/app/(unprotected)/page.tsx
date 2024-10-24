@@ -45,6 +45,7 @@ export default function Home() {
       <CookieConsent
         location="bottom"
         buttonText="Aceitar"
+        acceptOnScroll={true}
         cookieName="easilyhubCookieConsent"
         expires={365}
       >
