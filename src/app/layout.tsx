@@ -7,7 +7,6 @@ import { EdgeStoreProvider } from '../lib/edgestore'
 import { ModalProvider } from '@/components/providers/ModalProvider'
 // eslint-disable-next-line camelcase
 import { Bebas_Neue, Poppins } from 'next/font/google'
-import Head from 'next/head'
 import './globals.css'
 
 const bebas = Bebas_Neue({
@@ -32,12 +31,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta
-          name="impact-site-verification"
-          value="82375743-9a63-4062-b0dd-28553086037f"
-        ></meta>
-      </Head>
       <body className={`${poppins.className}  ${bebas.className} antialiased`}>
         <ConvexClientProvider>
           <ModalProvider />
