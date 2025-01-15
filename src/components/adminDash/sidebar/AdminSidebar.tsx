@@ -86,7 +86,7 @@ const SidebarItem = ({ item }) => {
   )
 }
 
-export default function Sidebar() {
+export default function AdminSideBar() {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false)
 
   return (
