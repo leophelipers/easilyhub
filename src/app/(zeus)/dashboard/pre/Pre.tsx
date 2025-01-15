@@ -10,7 +10,7 @@ import Logo from '../../../../../public/easilyE.png'
 
 export default function Pre() {
   return (
-    <div className="flex items-center justify-center p-8">
+    <div className="flex flex-col items-center justify-center p-8">
       <div className="flex flex-col md:grid md:grid-cols-2 gap-4">
         <Card>
           <CardHeader className="flex flex-col gap-2 items-center justify-center">
@@ -94,6 +94,13 @@ export default function Pre() {
             </Link>
           </CardFooter>
         </Card>
+      </div>
+      <div className="p-2">
+        <Link href={'/dashboard/main-dash'}>
+          <Button variant={'outline'} className="bg-brand-green">
+            Ir para dashboard
+          </Button>
+        </Link>
       </div>
     </div>
   )

@@ -4,7 +4,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['cdn.pixabay.com'],
+    domains: ['cdn.pixabay.com', 'plrcristao.shop'],
   },
 }
 

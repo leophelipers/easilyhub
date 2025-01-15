@@ -1,47 +1,10 @@
-'use client'
+import AddProductForm from './_components/AddProductForm'
 
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-
-// export interface INewProductProps {} props: IAdminTopbarProps
-
-export default function NewProduct() {
+export default function AddProductPage() {
   return (
-    <div className="p-6">
-      <div className="flex gap-2">
-        <div>
-          <Card className="bg-zinc-800 border-none text-white shadow rouded">
-            <CardHeader>
-              <CardTitle> sadsad Novo produto</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Button>Clique aqui</Button>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-      <div className="grid grid-cols-4 gap-2 mt-2">
-        <div>
-          <Card className="bg-zinc-800 border-none text-white shadow rouded">
-            <CardHeader>
-              <CardTitle>Novo produto</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Button>Clique aqui</Button>
-            </CardContent>
-          </Card>
-        </div>
-        <div>
-          <Card className="bg-zinc-800 border-none text-white shadow rouded">
-            <CardHeader>
-              <CardTitle>Novo produto</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Button>Clique aqui</Button>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+    <div className="max-w-2xl mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Add New Product</h1>
+      <AddProductForm />
     </div>
   )
 }
