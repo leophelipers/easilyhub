@@ -6,7 +6,7 @@ import CookieNoticeItalia from '../../../_components/cookiesItalia/CookiesItalia
 export default function App() {
   return (
     <div>
-      <CookieNoticeItalia iframeSrc="https://it17.cardiobalanceoriginal.com/?utm_source=213075" />
+      <CookieNoticeItalia iframeSrc="https://it17.cardiobalanceoriginal.com/?gtag=11564217017&utm_source=213075" />
     </div>
   )
 }
