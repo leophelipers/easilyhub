@@ -16,7 +16,7 @@ export default function CookieNoticePortugal({ iframeSrc }: CookieNoticeProps) {
       {/* Cookie Notice */}
       <div className="fixed inset-0 bg-white/85 text-black flex items-center justify-center p-4 z-50">
         <div className="bg-background rounded-lg shadow-2xl max-w-md w-full p-6">
-          <h2 className="text-xl font-semibold mb-4">Politica sui Cookie</h2>
+          <h2 className="text-xl font-semibold mb-4">Política de Cookies</h2>
           <p className="text-sm mb-6">
             Este site utiliza cookies para melhorar a navegação, respeitando a
             tua privacidade de acordo com o RGPD. Não utilizaremos os teus dados
