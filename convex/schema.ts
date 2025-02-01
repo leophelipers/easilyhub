@@ -90,6 +90,11 @@ export default defineSchema({
     finalDate: v.optional(v.string()),
   }),
 
+  drcashClicks: defineTable({
+    gclid: v.optional(v.string()),
+    fullUrl: v.optional(v.string()),
+  }),
+
   transactions: defineTable({
     affiliateId: v.id('users'), // ID do afiliado
     amount: v.number(), // Valor da comissão

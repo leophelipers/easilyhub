@@ -86,6 +86,7 @@ const config: Config = {
       },
       backgroundImage: {
         bannerImg: "url('/bgTexture.png')",
+        ultravix: "url('/ultravix.png)",
       },
     },
   },

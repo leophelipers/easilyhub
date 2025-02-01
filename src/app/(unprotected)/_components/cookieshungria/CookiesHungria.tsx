@@ -14,7 +14,7 @@ export default function CookieNoticeHungary({ iframeSrc }: CookieNoticeProps) {
       {/* Background iframe */}
 
       {/* Cookie Notice */}
-      <div className="fixed inset-0 bg-white/85 text-black flex items-center justify-center p-4 z-50">
+      <div className="fixed inset-0  text-black flex items-center justify-center p-4 z-50">
         <div className="bg-background rounded-lg shadow-2xl max-w-md w-full p-6">
           <h2 className="text-xl font-semibold mb-4">Cookie szabályzat</h2>
           <p className="text-sm mb-6">
