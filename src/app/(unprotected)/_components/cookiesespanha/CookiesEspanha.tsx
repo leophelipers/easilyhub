@@ -31,11 +31,11 @@ export default function CookieNoticeEspanha({ iframeSrc }: CookieNoticeProps) {
           <div className="flex justify-end space-x-4">
             <Link href={iframeSrc} passHref={true}>
               <Button variant="outline" className="whitespace-nowrap">
-                Elutasít
+                rechazar
               </Button>
             </Link>
             <Link href={iframeSrc} passHref={true}>
-              <Button className="whitespace-nowrap">Elfogadom</Button>
+              <Button className="whitespace-nowrap">Aceptar</Button>
             </Link>
           </div>
         </div>
