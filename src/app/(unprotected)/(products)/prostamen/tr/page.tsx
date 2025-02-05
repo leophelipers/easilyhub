@@ -28,7 +28,7 @@ export default function App() {
     <div className='relative h-screen w-full bg-[url("/ultravix.png")] bg-cover bg-center'>
       <div className="absolute inset-0 backdrop-blur-lg bg-black/30"></div>
       <div className="relative z-10 flex justify-center items-center h-full text-white text-2xl">
-        <CookieNoticeServia iframeSrc="https://b9qfh.doctortrf.com/l" />
+        <CookieNoticeServia iframeSrc="https://cl6y2.doctortrf.com/l" />
       </div>
     </div>
   )
