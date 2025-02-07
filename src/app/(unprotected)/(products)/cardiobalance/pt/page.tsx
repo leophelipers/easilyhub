@@ -28,7 +28,7 @@ export default function App() {
     <div className='relative h-screen w-full bg-[url("/ultravix.png")] bg-cover bg-center'>
       <div className="absolute inset-0 backdrop-blur-lg bg-black/30"></div>
       <div className="relative z-10 flex justify-center items-center h-full text-white text-2xl">
-        <CookieNoticePortugal iframeSrc="https://xlg5u.doctortrf.com/l" />
+        <CookieNoticePortugal iframeSrc="https://pt.cardiobalanceoriginal.com/?gtag=11564217017&utm_source=213979" />
       </div>
     </div>
   )
