@@ -13,7 +13,7 @@ interface CookieNoticeProps {
 const TOKEN = 'db557a118749859373c5b3a891aecb04' // Substitua pelo seu token
 const ENDPOINT = 'https://api.webvork.com/v1/new-lead' // Usando apenas um endpoint
 
-export default function CookieNoticeTurquia({ iframeSrc }: CookieNoticeProps) {
+export default function CookieLeadItalia({ iframeSrc }: CookieNoticeProps) {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [showCookieBanner, setShowCookieBanner] = useState(true)
@@ -94,8 +94,8 @@ export default function CookieNoticeTurquia({ iframeSrc }: CookieNoticeProps) {
   }
 
   return (
-    <main className="relative w-screen h-screen overflow-hidden">
-      <div className="fixed inset-0 text-black flex items-center justify-center p-4 z-50">
+    <main className="relative w-screen h-screen overflow-hidden text-white">
+      <div className="fixed inset-0 text-white flex items-center justify-center p-4 z-50">
         <div className="bg-background rounded-lg shadow-2xl max-w-md w-full p-6">
           <h2 className="text-xl font-semibold mb-4 text-center">Urogun</h2>
           <p className="text-sm mb-6 text-center">
@@ -114,11 +114,10 @@ export default function CookieNoticeTurquia({ iframeSrc }: CookieNoticeProps) {
               <span className="mr-2">+39</span>
               <Input
                 type="tel"
-                placeholder="Telefono"
+                placeholder="mob"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))} // Remove caracteres não numéricos
                 required
-                minLength={10}
               />
             </div>
             <Button type="submit" className="w-full" disabled={isSubmitting}>

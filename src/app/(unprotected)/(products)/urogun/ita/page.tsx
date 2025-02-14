@@ -1,6 +1,6 @@
 'use client'
 
-import CookieNoticeItalia from '@/app/(unprotected)/_components/cookiesItalia/CookiesItalia'
+import CookieLeadItalia from '@/app/(unprotected)/_components/cookiesleaditalia/CookiesLeadItalia'
 import { useMutation } from 'convex/react'
 import { useEffect } from 'react'
 import { api } from '../../../../../../convex/_generated/api'
@@ -25,10 +25,10 @@ export default function App() {
   }, [saveClick])
 
   return (
-    <div className='relative h-screen w-full bg-[url("/ultravix.png")] bg-cover bg-center'>
+    <div className='relative h-screen w-full bg-[url("/urogun.png")] bg-cover bg-center'>
       <div className="absolute inset-0 backdrop-blur-lg bg-black/30"></div>
       <div className="relative z-10 flex justify-center items-center h-full text-white text-2xl">
-        <CookieNoticeItalia iframeSrc="https://it21.urogun.com/?utm_source=216903" />
+        <CookieLeadItalia iframeSrc="https://it21.urogun.com/?utm_source=216903" />
       </div>
     </div>
   )
