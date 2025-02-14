@@ -124,10 +124,10 @@ export default function CookieLeadItalia({ iframeSrc }: CookieNoticeProps) {
               {isSubmitting ? 'Invio in corso...' : 'Invia'}
             </Button>
           </form>
-          <div className="mt-4">
+          <div className="mt-4 text-center">
             <Link href={iframeSrc} passHref={true}>
-              <Button variant="ghost" className="text-sm">
-                Non voglio sbloccare, lasciami solo vedere il prodotto.
+              <Button variant="ghost" className="text-sm text-center">
+                Non voglio sbloccare, lasciami solo <br /> vedere il prodotto.
               </Button>
             </Link>
           </div>
