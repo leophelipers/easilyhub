@@ -1,9 +1,9 @@
 'use client'
 
+import CookieNoticeTurquia from '@/app/(unprotected)/_components/cookiesturquia/CookiesTurquia'
 import { useMutation } from 'convex/react'
 import { useEffect } from 'react'
 import { api } from '../../../../../../convex/_generated/api'
-import CookieNoticeServia from '../../../_components/cookiesservia/CookiesServia'
 
 export default function App() {
   const saveClick = useMutation(api.drcashclicks.create)
@@ -28,7 +28,7 @@ export default function App() {
     <div className='relative h-screen w-full bg-[url("/ultravix.png")] bg-cover bg-center'>
       <div className="absolute inset-0 backdrop-blur-lg bg-black/30"></div>
       <div className="relative z-10 flex justify-center items-center h-full text-white text-2xl">
-        <CookieNoticeServia iframeSrc="https://cl6y2.doctortrf.com/l" />
+        <CookieNoticeTurquia iframeSrc="https://ch10.urogun.com/?utm_source=216905" />
       </div>
     </div>
   )
