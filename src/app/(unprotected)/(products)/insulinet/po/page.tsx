@@ -1,6 +1,6 @@
 'use client'
 
-import CookieNoticeSchweiz from '@/app/(unprotected)/_components/cookiessuica/CookiesSuica'
+import CookieNoticePoland from '@/app/(unprotected)/_components/cookiespolonia/CookiesPolonia'
 import { useMutation } from 'convex/react'
 import { useEffect } from 'react'
 import { api } from '../../../../../../convex/_generated/api'
@@ -28,7 +28,7 @@ export default function App() {
     <div className='relative h-screen w-full bg-[url("/ultravix.png")] bg-cover bg-center'>
       <div className="absolute inset-0 backdrop-blur-lg bg-black/30"></div>
       <div className="relative z-10 flex justify-center items-center h-full text-white text-2xl">
-        <CookieNoticeSchweiz iframeSrc="https://de.cystinorm.com/?utm_source=2215270" />
+        <CookieNoticePoland iframeSrc="https://pl.doctorbodyfuel.com/?utm_source=1349" />
       </div>
     </div>
   )
