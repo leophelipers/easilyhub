@@ -28,7 +28,7 @@ export default function App() {
     <div className='relative h-screen w-full bg-[url("/ultravix.png")] bg-cover bg-center'>
       <div className="absolute inset-0 backdrop-blur-lg bg-black/30"></div>
       <div className="relative z-10 flex justify-center items-center h-full text-white text-2xl">
-        <CookieNoticePortugal iframeSrc="https://app.monetizze.com.br/r/ABG25444434/?u=UN82623" />
+        <CookieNoticePortugal iframeSrc="https://app.monetizze.com.br/r/ATY25445408/?u=UN82623" />
       </div>
     </div>
   )
