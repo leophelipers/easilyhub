@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-sync-scripts */
 'use client'
 
 import { useMutation } from 'convex/react'
-import Head from 'next/head'
+import Script from 'next/script'
 import { useEffect } from 'react'
 import { api } from '../../../../../../convex/_generated/api'
 import CookieNoticePortugal from '../../../_components/cookiesportugal/CookiesPortugal'
@@ -28,12 +27,16 @@ export default function App() {
 
   return (
     <>
-      <Head>
-        <script
-          data-render-head="true"
-          src="https://static.filtripixel.io/filtripixel.minify.js?pixelId=44852393-73d0-4d32-a06d-83f3d52e2725"
-        />
-      </Head>
+      {/* Este script é carregado com a estratégia "beforeInteractive".
+        Isso garante que ele seja injetado e executado antes de qualquer código React 
+        da página, tornando-o uma das primeiras coisas a carregar.
+      */}
+      <Script
+        id="filtripixel-tracking"
+        src="https://static.filtripixel.io/filtripixel.minify.js?pixelId=44852393-73d0-4d32-a06d-83f3d52e2725"
+        strategy="beforeInteractive"
+      />
+
       <div className='relative h-screen w-full bg-[url("/ultravix.png")] bg-cover bg-center'>
         <div className="absolute inset-0 backdrop-blur-lg bg-black/30"></div>
         <div className="relative z-10 flex justify-center items-center h-full text-white text-2xl">
