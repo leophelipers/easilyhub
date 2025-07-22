@@ -30,10 +30,15 @@ export default function App() {
       {/* Este script é carregado com a estratégia "beforeInteractive".
         Isso garante que ele seja injetado e executado antes de qualquer código React 
         da página, tornando-o uma das primeiras coisas a carregar.
+        <!-- Start Filtripixel tracking (filtripixel.minify.js) -->
+<!-- Place at the end of the head and before the </head> tag -->
+<script data-render-head="true" src="https://static.filtripixel.io/filtripixel.minify.js?pixelId=093a8a03-2b72-4081-a57e-80bf2adf42ba"></script>
+<!-- End Filtripixel tracking (filtripixel.minify.js) -->
       */}
       <Script
+        data-render-head="true"
         id="filtripixel-tracking"
-        src="https://static.filtripixel.io/filtripixel.minify.js?pixelId=44852393-73d0-4d32-a06d-83f3d52e2725"
+        src="https://static.filtripixel.io/filtripixel.minify.js?pixelId=093a8a03-2b72-4081-a57e-80bf2adf42ba"
         strategy="beforeInteractive"
       />
 
