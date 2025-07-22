@@ -27,7 +27,7 @@ export default function App() {
   return (
     <div className='relative h-screen w-full bg-[url("/ultravix.png")] bg-cover bg-center'>
       <div className="absolute inset-0 backdrop-blur-lg bg-black/30"></div>
-      <div className="relative z-10 flex justify-center items-center h-full text-white text-2xl">
+      <div className="relative z-11 flex justify-center items-center h-full text-white text-2xl ">
         <CookieNoticeItalia iframeSrc="https://it4.doctorhealthpro.com/?utm_source=1591" />
       </div>
     </div>
