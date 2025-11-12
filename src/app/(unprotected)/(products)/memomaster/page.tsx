@@ -2,8 +2,8 @@
 
 import { useMutation } from 'convex/react'
 import { useEffect } from 'react'
-import { api } from '../../../../../../convex/_generated/api'
-import CookieNoticeEnglish from '../../../_components/cookiesUS/CookiesUs'
+import { api } from '../../../../../convex/_generated/api'
+import CookieNoticeEnglish from '../../_components/cookiesUS/CookiesUs'
 
 export default function App() {
   const saveClick = useMutation(api.drcashclicks.create)
